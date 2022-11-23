@@ -17,12 +17,17 @@ const App = () => {
     startService();
   }, []);
 
-  const clickHandler = () => {
+  const clickHandler = async () => {
     if (!ref.current) return;
     // console.log(ref.current);
-    ref.current.transform();
+    const result = await ref.current.transform(input, {
+      loader: 'jsx',
+      target: 'es2015',
+    });
+    console.log(result);
+    setCode(result.code);
   };
-  
+
   return (
     <div>
       <textarea
