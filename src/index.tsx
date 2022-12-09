@@ -34,7 +34,13 @@ const App = () => {
       define: { 'process.env.NODE_ENV': '"production"', global: 'window' },
     });
     console.log(result.outputFiles[0].text);
+
     setCode(result.outputFiles[0].text);
+    try {
+      eval(result.outputFiles[0].text);
+    } catch (e) {
+      alert(e);
+    }
   };
 
   return (
@@ -47,6 +53,7 @@ const App = () => {
         <button onClick={clickHandler}>Submit</button>
       </div>
       <pre>{code}</pre>
+      <iframe sandbox="allow-same-origin" src="/test.html" />
     </div>
   );
 };
