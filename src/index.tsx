@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'bulmaswatch/superhero/bulmaswatch.min.css';
-import CodeCell from './components/CodeCell';
+import CodeCell from './components/code-cell';
 
 const App = () => {
   return (
     <div>
       <CodeCell />
-      <CodeCell/>
+      {/* <CodeCell/> */}
     </div>
   );
 };
